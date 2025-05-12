@@ -1,0 +1,55 @@
+portfolio/
+│── index.html
+<header class="hero">
+    <h1>Your Name</h1>
+    <p>Frontend Developer | Web Enthusiast</p>
+</header>
+<section class="projects">
+    <div class="card">
+        <h3>Project One</h3>
+        <p>Short description here.</p>
+        <a href="https://github.com/yourproject" target="_blank">View Project</a>
+    </div>
+</section>
+<section class="skills">
+    <div class="skill">
+        <span>HTML</span>
+        <div class="bar html"></div>
+    </div>
+</section>
+<button id="theme-toggle">Toggle Theme</button>
+
+│── styles.css
+.hero {
+    background: url('assets/images/hero-bg.jpg') fixed center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+.card {
+    transition: transform 0.3s;
+}
+.card:hover {
+    transform: scale(1.05);
+}
+.bar {
+    width: 0;
+    height: 10px;
+    background: #00ff99;
+    transition: width 1s;
+}
+
+│── script.js
+window.addEventListener('scroll', () => {
+    document.querySelector('.html').style.width = '80%';
+});
+document.getElementById('theme-toggle').addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+});
+
+│── assets/
+    │── images/
+    │── icons/
